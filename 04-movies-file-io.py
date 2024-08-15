@@ -4,6 +4,9 @@
 # - A) create a movie tuple and store in a list of movies
 # - B) replace the tuple with a movie class and store in list of movies
 
+from movie import Movie
+
+
 FILE_NAME = './files/movies.txt'
 
 # list of movie strings
@@ -18,7 +21,13 @@ for movie_str in movies_list_str:
     #movie_data = movie_str.split("\\t")
     #print(f'movie_data: {movie_data}')
     title, year, rating, director = movie_str.split("\\t")
-    print(f'Movie Data: {title}, {year}, {rating}, {director}')
-    movies_list.append((title, year, rating, director))
+    #print(f'Movie Data: {title}, {year}, {rating}, {director}')
+    movie = Movie(title, year, rating, director)
+    # add movie details as a tuple
+    #movies_list.append((title, year, rating, director))
+    # add movie details as an instance of Movie class
+    movies_list.append(movie)
 print("+"*20)
-print(movies_list)
+print("Movies Summary:")
+for m in movies_list:
+    print(m.details())
