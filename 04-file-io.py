@@ -28,8 +28,15 @@ with open(FILE_NAME) as file_in:
 print("=" * 40)
 
 # read all lines into an array
-
+with open(FILE_NAME) as file_in:
+    lines_with_nl = file_in.readlines()
+    print(lines_with_nl)
+print("=" * 40)
 # read into array but get rid of newline
+with open(FILE_NAME) as file_in:
+    lines_without_nl = file_in.read().splitlines()
+    print(lines_without_nl)
+print("=" * 40)
 
 # p. 107 writing to a text file
 states = (
@@ -39,6 +46,13 @@ states = (
     'Alabama'
 )
 
+FILE_NAME = './files/states.txt'
+with open(FILE_NAME, "w") as file_out:
+    for state in states:
+        file_out.write(state+"\n")
+
+print("=" * 40)
+print("bye")
 
 
 
