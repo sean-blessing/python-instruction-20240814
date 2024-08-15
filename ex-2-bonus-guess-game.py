@@ -16,7 +16,7 @@ while guess != the_number:
     guess = int(input("What's your guess? "))
     count+=1
     diff = guess - the_number
-    # diff < 10: way too low
+    # diff < -10: way too low
     # diff < 0: too low
     # diff > 10: way too high
     # diff > 0: too high
