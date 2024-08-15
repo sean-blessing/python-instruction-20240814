@@ -30,4 +30,6 @@ for movie_str in movies_list_str:
 print("+"*20)
 print("Movies Summary:")
 for m in movies_list:
-    print(m.details())
+    print(m.title)
+    print(m.year)
+    #print(m.details())
