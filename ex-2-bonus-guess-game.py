@@ -8,6 +8,21 @@ print("="*40+"\n")
 # start a game
 choice = "y"
 
+def validate_int_range(prompt):
+    valid_entry = False
+    number = 0
+    
+    while valid_entry != True:
+        try:
+            number = int(input(prompt))
+            if number < min_val or number > max_val:
+                print(f"Entry must be within range {min_val} to {max_val}")
+            else:
+                valid_entry = True
+        except:
+            print("Invalid entry. Please try again.")
+    return number
+    
 while choice == "y":
     print(f"I'm thinking of a number between {min_val} and {max_val}. Try to guess it.")
 
@@ -18,7 +33,7 @@ while choice == "y":
     print()
 
     while guess != the_number:
-        guess = int(input("What's your guess? "))
+        guess = validate_int_range("What's your guess? ")
         count+=1
         diff = guess - the_number
         # diff < -10: way too low
